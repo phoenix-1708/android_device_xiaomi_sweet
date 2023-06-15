@@ -13,13 +13,21 @@ $(call inherit-product, device/xiaomi/sweet/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
 
+RISING_MAINTAINER := phoenix
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+SUSHI_BOOTANIMATION := 1080
+WITH_GMS := false
+TARGET_CORE_GMS := true
+TARGET_USE_PIXEL_FINGERPRINT := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_BUILD_APERTURE_CAMERA := false
+
+# Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_sweet
 PRODUCT_DEVICE := sweet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 10 Pro
 PRODUCT_MANUFACTURER := Xiaomi
-
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-DEVICE_MAINTAINER := danielml3
